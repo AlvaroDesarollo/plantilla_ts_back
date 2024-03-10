@@ -1,0 +1,46 @@
+{
+  "env": {
+    "node": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+
+    "extraFileExtensions": [".json"]
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "sort-keys": "error",
+    "indent": [
+      "error",
+      2,
+      {
+        "ignoredNodes": [
+          "CallExpression[callee.name='constructor'] > FunctionExpression"
+        ]
+      }
+    ],
+    "linebreak-style": ["error", "windows"],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "semi": ["error", "never"],
+    "import/prefer-default-export": "off",
+    "import/no-unresolved": "off",
+    "spaced-comment": [
+      "error",
+      "always",
+      {
+        "exceptions": ["-"],
+        "markers": ["=", "!"]
+      }
+    ]
+  },
+  "ignorePatterns": ["dist/", "node_modules/"]
+}
